@@ -1,17 +1,18 @@
-
 import { watch } from "fs";
 import { activeExp } from "../config/activeExp";
 import { build } from "./exp-build";
-import ws from 'ws';
+import { broadcastChange } from "./exp-serve";
+import Watcher from 'watcher';
 
+console.clear();
+console.log(`Experiment Running: ${activeExp.name} ${activeExp.version}`);
 
-export const watcher = watch(
-    `./src/${activeExp.name}/${activeExp.version}/`,
-    { recursive: true },
-    (event, filename) => {
-        console.log(`Detected ${event} in ${filename}`);
-        if (event === 'change') {
-            build();
-        }
-    },
-);
+const watcher = new Watcher(`./src/${activeExp.name}/${activeExp.version}/`, { recursive: true });
+
+watcher.on('change', async (event, targetPath) => {
+    console.clear();
+    console.log(`Experiment Running: ${activeExp.name} ${activeExp.version}`);
+    await build().then(() => {
+        broadcastChange();
+    });
+});
