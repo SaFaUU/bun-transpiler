@@ -147,3 +147,12 @@ Tampermonkey Script to Run the Transpiler with Reload:
 })();
 
 ```
+
+## Roadmap
+
+Here is a list of things that are either unfinished, or desireable. Got a feature you fancy? [Create an issue] to possibly see it added to this list or better if you want to contribute go ahead and create a pull request.:
+
+| Status  |    Name    |                                   Description                                   |
+| :-----: | :--------: | :-----------------------------------------------------------------------------: |
+| Pending |    SCSS    |             Adds the ability to compile scss to a single css file.              |
+| Pending | Source URL | Add Source URL to Build Files to make it easier to debug when uploaded to tool. |

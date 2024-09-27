@@ -3,16 +3,34 @@ import { activeExp } from "../config/activeExp";
 import { build } from "./exp-build";
 import { broadcastChange } from "./exp-serve";
 import Watcher from 'watcher';
+import { expPrompter } from "./exp-prompter";
 
-console.clear();
-console.log(`Experiment Running: ${activeExp.name} ${activeExp.version}`);
 
-const watcher = new Watcher(`./src/${activeExp.name}/${activeExp.version}/`, { recursive: true });
 
-watcher.on('change', async (event, targetPath) => {
-    console.clear();
-    console.log(`Experiment Running: ${activeExp.name} ${activeExp.version}`);
-    await build().then(() => {
-        broadcastChange();
+// let watcherInstance;
+// function initializeWatcher() {
+//     watcherInstance = new Watcher(`./src/${activeExp.name}/${activeExp.variation}/`, { recursive: true });
+// }
+
+// initializeWatcher();
+
+// function reinitalizeWatcher() {
+//     if (watcherInstance) {
+//         watcherInstance.removeAllListeners();
+//         watcherInstance.close();
+//     }
+//     initializeWatcher();
+// }
+
+expPrompter().then(() => {
+    build();
+    const watcher = new Watcher(`./src/${activeExp.clientName}/${activeExp.testName}/${activeExp.variation}/`, { recursive: true });
+
+    watcher.on('change', async (event, targetPath) => {
+        console.clear();
+        console.log(`Experiment Running: ${activeExp.clientName} ${activeExp.testName} ${activeExp.variation}`);
+        await build().then(() => {
+            broadcastChange();
+        });
     });
-});
+})

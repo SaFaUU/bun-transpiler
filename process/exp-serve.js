@@ -83,6 +83,3 @@ export const server = Bun.serve({
         return new Response("Error occurred", { status: 500 });
     },
 });
-
-
-console.log(`Listening on http://localhost:${server.port} ...`);
