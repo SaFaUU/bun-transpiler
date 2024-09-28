@@ -28,7 +28,7 @@ Tampermonkey Script to Run the Transpiler out Reload:
 // @name         Bun Runner
 // @description  A/B testing transpiler with HOT update script
 // @version      1.0
-// @author       Moinul Islam, Juhair Islam, Safa Asgar
+// @author       Moinul Islam
 // @match        *://*/*
 // @noframes
 // ==/UserScript==
@@ -92,7 +92,7 @@ Tampermonkey Script to Run the Transpiler with Reload:
 // @name         Bun Runner - Reload
 // @description  A/B testing transpiler with HOT update script
 // @version      1.0
-// @author       Moinul Islam, Juhair Islam, Safa Asgar
+// @author       Moinul Islam
 // @match        *://*/*
 // @noframes
 // ==/UserScript==
@@ -152,7 +152,8 @@ Tampermonkey Script to Run the Transpiler with Reload:
 
 Here is a list of things that are either unfinished, or desireable. Got a feature you fancy? [Create an issue] to possibly see it added to this list or better if you want to contribute go ahead and create a pull request.:
 
-| Status  |    Name    |                                   Description                                   |
-| :-----: | :--------: | :-----------------------------------------------------------------------------: |
-| Pending |    SCSS    |             Adds the ability to compile scss to a single css file.              |
-| Pending | Source URL | Add Source URL to Build Files to make it easier to debug when uploaded to tool. |
+|  Status   |       Name       |                                   Description                                   |
+| :-------: | :--------------: | :-----------------------------------------------------------------------------: |
+| Completed |       SCSS       |             Adds the ability to compile scss to a single css file.              |
+|  Pending  |    Source URL    | Add Source URL to Build Files to make it easier to debug when uploaded to tool. |
+|  Pending  | Change Variation |     Add Options to change variation and test from terminal without closing.     |
