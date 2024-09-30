@@ -5,23 +5,6 @@ import { broadcastChange } from "./exp-serve";
 import Watcher from 'watcher';
 import { expPrompter } from "./exp-prompter";
 
-
-
-// let watcherInstance;
-// function initializeWatcher() {
-//     watcherInstance = new Watcher(`./src/${activeExp.name}/${activeExp.variation}/`, { recursive: true });
-// }
-
-// initializeWatcher();
-
-// function reinitalizeWatcher() {
-//     if (watcherInstance) {
-//         watcherInstance.removeAllListeners();
-//         watcherInstance.close();
-//     }
-//     initializeWatcher();
-// }
-
 expPrompter().then(() => {
     build();
     buildSass();

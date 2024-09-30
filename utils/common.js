@@ -23,7 +23,17 @@ export function waitFor(element) {
 }
 
 export function querySingle(selector) {
+    return document.querySelector(selector);
+}
+
+export function queryAll(selector) {
     if (typeof selector === 'string') {
-        return document.querySelector(selector);
+        return document.querySelectorAll(selector);
+    }
+}
+
+export function insertElement(target, position, element, exists) {
+    if (!exists) {
+        target.insertAdjacentElement(element, position);
     }
 }

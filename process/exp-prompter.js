@@ -28,12 +28,10 @@ function testList(clientName) {
 }
 
 function variationList(testName) {
-    return readdirSync(`./src/${activeExp.clientName}/${testName}/`).map((dir) => {
-        return {
-            name: dir,
-            value: dir,
-        };
-    });
+    return readdirSync(`./src/${activeExp.clientName}/${testName}/`).filter((dir) => dir !== 'info.js').map((dir) => ({
+        name: dir,
+        value: dir,
+    }));
 }
 
 export async function expPrompter() {
@@ -94,9 +92,17 @@ export async function expPrompter() {
 
         if (variationSelect === 'create') {
             const variationName = await input({ message: 'Please Enter the Variation name: ' });
+            const siteLink = await input({ message: 'Please Enter the Site Link: ' });
+
             createDir(`./src/${activeExp.clientName}/${activeExp.testName}/${variationName}/`);
             activeExp.variation = variationName;
             cpSync(`./template/default/`, `./src/${activeExp.clientName}/${activeExp.testName}/${activeExp.variation}/`, { recursive: true });
+            writeFileSync(`./src/${activeExp.clientName}/${activeExp.testName}/info.js`, `
+export const siteLink = '${siteLink || ""}';
+export const clientName = '${activeExp.clientName}';
+export const testName = '${activeExp.testName}';
+export const variation = '${activeExp.variation}';
+`);
         } else {
             activeExp.variation = variationSelect;
         }

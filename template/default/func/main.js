@@ -1,3 +1,6 @@
+import { qaLog } from "../../../../../utils/common";
+import { testName, variation } from "../../info";
+
 export function main() {
-    console.log("Hello from Main");
+    qaLog(`${testName}_${variation} Experiment Running`);
 }

@@ -1,5 +1,7 @@
 {
   "name": "bun-transpiler",
+  "version": "1.0.0",
+  "author": "Safa Asgar",
   "module": "index.js",
   "devDependencies": {
     "@types/bun": "latest"

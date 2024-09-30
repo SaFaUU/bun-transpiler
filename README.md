@@ -20,6 +20,16 @@ To Start the Transpiler:
 bun run start
 ```
 
+### Features
+
+- Faster than any other transpiler or bundler (Webpack, Bable, Rollup, etc).
+- Modularity !!!!!
+- Transpile and Compile to ES6.
+- Hot Reload with Server Sent Events.
+- IIFE to avoid polluting global scope.
+- Supports SCSS and CSS.
+- Made with Bun 😋.
+
 (All Credit goes to the Author for the Script).
 Tampermonkey Script to Run the Transpiler out Reload:
 
@@ -152,8 +162,8 @@ Tampermonkey Script to Run the Transpiler with Reload:
 
 Here is a list of things that are either unfinished, or desireable. Got a feature you fancy? [Create an issue] to possibly see it added to this list or better if you want to contribute go ahead and create a pull request.:
 
-|  Status   |       Name       |                                   Description                                   |
-| :-------: | :--------------: | :-----------------------------------------------------------------------------: |
-| Completed |       SCSS       |             Adds the ability to compile scss to a single css file.              |
-|  Pending  |    Source URL    | Add Source URL to Build Files to make it easier to debug when uploaded to tool. |
-|  Pending  | Change Variation |     Add Options to change variation and test from terminal without closing.     |
+|  Status   |       Name       |                               Description                               |
+| :-------: | :--------------: | :---------------------------------------------------------------------: |
+| Completed |       SCSS       |         Adds the ability to compile scss to a single css file.          |
+|  Pending  |    Source URL    | Add Source URL to Build Files to make it easier to debug when uploaded. |
+|  Pending  | Change Variation | Add Options to change variation and test from terminal without closing. |
