@@ -57,7 +57,7 @@ export const server = Bun.serve({
                 const filePath = `${BASE_PATH}/index.js`;
                 const fileData = Bun.file(filePath);
                 return new Response(fileData, {
-                    headers: { "Content-Type": "application/javascript" }
+                    headers: { "Content-Type": "application/javascript", 'Access-Control-Allow-Origin': '*', 'Access-Control-Allow-Methods': 'GET, POST, PUT, DELETE, OPTIONS' }
                 });
             }
 
@@ -65,7 +65,7 @@ export const server = Bun.serve({
                 const filePath = `${BASE_PATH}/index.css`;
                 const fileData = Bun.file(filePath);
                 return new Response(fileData, {
-                    headers: { "Content-Type": "text/css" }
+                    headers: { "Content-Type": "text/css", 'Access-Control-Allow-Origin': '*', 'Access-Control-Allow-Methods': 'GET, POST, PUT, DELETE, OPTIONS' }
                 });
             }
 
