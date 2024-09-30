@@ -50,7 +50,11 @@ export const server = Bun.serve({
 
         try {
             if (url.pathname === '/') {
-                return new Response("Hello Mom!", { status: 200 });
+                return new Response("Hello Mom!", {
+                    status: 200, headers: {
+                        'Access-Control-Allow-Origin': '*', 'Access-Control-Allow-Methods': 'GET, POST, PUT, DELETE, OPTIONS'
+                    }
+                });
             }
 
             if (url.pathname === '/index.js') {
