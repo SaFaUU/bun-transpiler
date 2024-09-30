@@ -28,6 +28,7 @@ bun run start
 - Hot Reload with Server Sent Events.
 - IIFE to avoid polluting global scope.
 - Supports SCSS and CSS.
+- Templating Support.
 - Made with Bun 😋.
 
 (All Credit goes to the Author for the Script).
